@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated faultTreeModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="faultTreeModel.presentation.FaultTreeModelModelWizardID"
+            name="%_UI_FaultTreeModelModelWizard_label"
+            class="faultTreeModel.presentation.FaultTreeModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FaultTreeModelModelFile.gif">
+         <description>%_UI_FaultTreeModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated faultTreeModel -->
+      <editor
+            id="faultTreeModel.presentation.FaultTreeModelEditorID"
+            name="%_UI_FaultTreeModelEditor_label"
+            icon="icons/full/obj16/FaultTreeModelModelFile.gif"
+            extensions="faulttreemodel"
+            class="faultTreeModel.presentation.FaultTreeModelEditor"
+            contributorClass="faultTreeModel.presentation.FaultTreeModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="faultTreeModel" nsURI="http://www.example.org/faultTreeModel"
+    nsPrefix="faultTreeModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Tree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gates" upperBound="-1"
+        eType="#//Gate" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//IntermediateEvent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//IntermediateEvent #//ExternalEvent #//BasicEvent #//ConditionalEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Event" eOpposite="#//Event/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Event"
+        eOpposite="#//Event/children"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gate" abstract="true" eSuperTypes="#//AndGate #//OrGate #//InhibitGate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="2"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermediateEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndGate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrGate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InhibitGate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//ConditionalEvent"/>
+  </eClassifiers>
+</ecore:EPackage>
