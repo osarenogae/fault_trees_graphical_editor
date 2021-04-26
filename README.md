@@ -1,3 +1,3 @@
 # fault_trees_graphical_editor
 
-This graphical editor has been created for the purpose of fulfilling the exercise provided by the Computer Science department of the University of York as an interview for the Post of a Software Engineer. All files in this repository represents solely the work done by the author, Osarenogae Ogieva.
+This graphical editor has been created for the purpose of allowing developers create a graphical model of a simple fault tree based on the grammar specification already defined in the Ecore metamodel.
